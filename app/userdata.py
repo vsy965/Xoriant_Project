@@ -68,14 +68,14 @@ def delete_record(id):
         return res
 
 
-@app.route("/show_all", methods = ["GET"])
-def all_records():
-    data = collection.find()
-    for rec in data:
-        yield make_response(jsonify(rec), 200)
+# @app.route("/show_all", methods = ["GET"])
+# def all_records():
+#     data = collection.find()
+#     for rec in data:
+#         yield make_response(jsonify(rec), 200)
 
 
-    return make_response({"msg": "record completed"})
+#     return make_response({"msg": "record completed"})
 
 
 
