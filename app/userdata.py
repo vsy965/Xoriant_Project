@@ -22,13 +22,9 @@ def add_user():
     req = request.get_json()
     data = collection.find()
     if isinstance(req, type(user_data)):
-        if collection.find({"_id": req[0]}):
-            res = make_response({"error": "id already present"}, 200)
-            return res
-        else:
-            collection.insert_one(req)
-            res = make_response({"msg": "collection Added"}, 200)
-            return res
+        collection.insert_one(req)
+        res = make_response({"msg": "collection Added"}, 200)
+        return res
     else:
         res = make_response({"error": "Provide valid data"})
 
