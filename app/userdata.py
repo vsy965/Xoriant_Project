@@ -21,6 +21,10 @@ user_data = {"_id": 1001,
 def add_user():
     req = request.get_json()
     data = collection.find()
+    y = [ each_rec for each_rec in data if req["_id"] == each_rec["_id"] ]
+    if y:
+        res = make_response({"Error": "Id already present"})
+        return res
     if isinstance(req, type(user_data)):
         collection.insert_one(req)
         res = make_response({"msg": "collection Added"}, 200)
