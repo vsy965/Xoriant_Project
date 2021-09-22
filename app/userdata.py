@@ -48,7 +48,8 @@ def update_record(id):
     data = request.get_json()
     user_present = collection.find_one({"_id": int(id)})
     if user_present:
-        collection.update_one({"_id": int(id)}, {"$set": data})
+        new = {"$set": data}
+        collection.update_one({"_id": int(id)}, new)
         res = make_response({"msg": "Data updated"})
         return res
     else:
