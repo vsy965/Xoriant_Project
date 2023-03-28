@@ -8,12 +8,12 @@ db = client['Bankdb']
 
 collection = db['bankacc']
 
-user_data = {"_id": 1001,
-             "name": "raj",
-             "age": 27,
-             "gender": "male",
-             "phone": 123456789,
-             "email": "raj@gmail.com"}
+# user_data = {"_id": 1001,
+#              "name": "raj",
+#              "age": 27,
+#              "gender": "male",
+#              "phone": 123456789,
+#              "email": "raj@gmail.com"}
 # print(type(user_data))
 # collection.insert_one(user_data)
 
